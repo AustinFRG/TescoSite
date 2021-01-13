@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <link rel="icon" href="images/favicon.png">
+      <link rel="canonical" href="https://tescolt2.com/">
+      <title>TescoLT2 Site</title>
+      <meta name='description' content="The official Tesco LT2 website.">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="style.css">
+      <script async src="https://arc.io/widget.min.js#31cZHmAN"></script>
+    </head>
+    <body>
+      <div class="regform"><h1> Tesco Order Form</h1></div>
+        <div class="main">
+            <form id="order-form">
+                <div id="name">
+                    <h2 class="name">Name</h2>
+                    <input class="rblxname" type="text" name="first_name" id="rblx-user"><br>
+                    <label class="rblxlabel">Roblox Name (Ex. AustinFRG)</label>
+                    <input class="discname" type="text" name="last_name" id="disc-user">
+                    <label class="disclabel">Discord Tag (Ex. AustinFRG#0001)</label>
+                </div>
+
+                <div id="selectContainer">
+                <h2 class="name"> Item(s)</h2>
+                <select class="item-option" name="category" id="item-picked">
+                  <option disabled="disabled" selected="selected" value="no-item">-- Item --</option>
+                  <!--  class="new-item" -->
+<!--                       <option class="new-item"> [NEW!] Fabulous Gift</option>
+                      <option class="new-item"> [NEW!] Gift of Good Preparedness</option>
+                      <option class="new-item"> [NEW!] Gift with Green Candy Cane Stripes</option>
+                      <option class="new-item"> [NEW!] Spooky Deep Earth Gift</option>
+                      <option class="new-item"> [NEW!] Teal Gift</option> -->
+                      <option> Alpha Axe</option>
+                      <option> Amber Axe Box</option>
+                      <option> Amber Axe</option>
+                      <option> Arctic Light Painting (Mountain)</option>
+                      <option> Armchair</option>
+                      <option> Bees Axe</option>
+                      <option> Beta Axe</option>
+                      <option> Big Gift (Number Cube)</option>
+                      <option> Blue Ball</option>
+                      <option> Blue Bone Turkey</option>
+                      <option> Blue Neon Wire</option>
+                      <option> Boat (The Unknown Painting)</option>
+                      <option> Bold and Brash Painting</option>
+                      <option> Burnt Gift Painting</option>
+                      <option> Can of Cranberry Sauce</option>
+                      <option> Candy Bag Box</option>
+                      <option> Candy Cane Axe</option>
+                      <option> Candycorn Axe</option>
+                      <option> Chicken Axe</option>
+                      <option> Chop Saw</option>
+                      <option> Cold and Wet and Lumpy Gift from Bob (Snowball)</option>
+                      <option> Couch</option>
+                      <option> Cyan Neon Wire</option>
+                      <option> Daisy Gift (Yellow Balls)</option>
+                      <option> Dish Washer</option>
+                      <option> Disturbed Painting (Goose)</option>
+                      <option> Double Bed</option>
+                      <option> Duck Shaped Gift (Tesco Mascot)</option>
+                      <option> End Times Axe</option>
+                      <option> End Times Axe</option>
+                      <option> Eyes</option>
+                      <option> Fiery Gift of Lumber (Fire Present)</option>
+                      <option> Fire Axe</option>
+                      <option> Fireworks</option>
+                      <option> Flood light</option>
+                      <option> Fridge</option>
+                      <option> Ghastly Pumpkin</option>
+                      <option> Gift of Adventure (Sledge)</option>
+                      <option> Gift of Oxidation (Rusty Axe)</option>
+                      <option> Gift with Candy Cane Stripes (Candy Cane)</option>
+                      <option> Gingerbread Axe</option>
+                      <option> Gingerbread Gift</option>
+                      <option> Gloomy Seascape at Dusk Painting (Forest)</option>
+                      <option> Golden Gift of Golden Times (Golden Toilet)</option>
+                      <option> Green Ball</option>
+                      <option> Green Bone Turkey</option>
+                      <option> Green Neon Wire</option>
+                      <option> Green Pumpkin</option>
+                      <option> Halloween Icicle Lights</option>
+                      <option> Hatches</option>
+                      <option> Healthy Gifts (Bowl)</option>
+                      <option> Icicle Lights (Christmas Lights)</option>
+                      <option> Jingly Gift of Jingles (Santa Sleigh)</option>
+                      <option> Levers</option>
+                      <option> Loveseat</option>
+                      <option> Lumbkins</option>
+                      <option> Lump of Coal</option>
+                      <option> Modern Gift Painting (Pattern)</option>
+                      <option> Modern Gift Painting (Pattern)</option>
+                      <option> Orange Gift of Traffic Control and Corporate Power (Cone)</option>
+                      <option> Orange Neon Wire</option>
+                      <option> Orange Pumpkin</option>
+                      <option> Outdoor Watercolour Sketch Painting</option>
+                      <option> Oven</option>
+                      <option> Pineapple Painting</option>
+                      <option> Pink Bone Turkey</option>
+                      <option> Pink Candies</option>
+                      <option> Pressure Plates</option>
+                      <option> Purple Candy Bag</option>
+                      <option> Purple Neon Wire </option>
+                      <option> Purple Pumpkin</option>
+                      <option> Red Ball</option>
+                      <option> Red Lamps</option>
+                      <option> Red Neon Wire</option>
+                      <option> Red Pumpkin (Cursed Pumpkin)</option>
+                      <option> Round and Flat Gift (Plate)</option>
+                      <option> Ruki Axe</option>
+                      <option> Rusty Axe</option>
+                      <option> Scoob Heads</option>
+                      <option> Single Bed</option>
+                      <option> Spork</option>
+                      <option> Sweet Gift (Candy Cane Axe Present)</option>
+                      <option> Teal Gift (Noob Heads)</option>
+                      <option> The Gift of Great Times (Chicken Present)</option>
+                      <option> The Lonely Giraffe</option>
+                      <option> The Many Axe</option>
+                      <option> Toilets</option>
+                      <option> Turkey (White Bone)</option>
+                      <option> Turkey Leftovers</option>
+                      <option> Twitter Axe</option>
+                      <option> Unhealthy Gifts (Soda Can)</option>
+                      <option> Very Plum Gift (Purple Ball)</option>
+                      <option> Wall Light</option>
+                      <option> Warm Gift of Love and Safety (Hot Chocolate)</option>
+                      <option> White Neon Wire</option>
+                      <option> Wobblier Gift of Less Certainty (Red Head)</option>
+                      <option> Wobbly Gift Of Low Confidence (Green Head)</option>
+                      <option> Wobbly Gift of High Confidence (Purple Head)</option>
+                      <option> Wobbly Gift of Uncertainty (Yellow Head)</option>
+                      <option> Yellow Neon Wire</option>
+                  </select>
+
+                <select class="type-option" name="category" id="type-picked">
+                  <option disabled="disabled" selected="selected" value="no-type">-- Type --</option>
+                      <option> Gifted</option>
+                      <option> Boxed</option>
+                      <option> Unboxed</option>
+                  </select>
+
+                <select class="amount-option" name="category" id="amount-picked">
+                  <option disabled="disabled" selected="selected" value="no-amount">-- Amount --</option>
+                      <option> 1</option>
+                      <option> 2</option>
+                      <option> 3</option>
+                      <option> 4</option>
+                      <option> 5</option>
+                      <option> 6</option>
+                      <option> 7</option>
+                      <option> 8</option>
+                      <option> 9</option>
+                      <option> 10</option>
+                      <option> 11</option>
+                      <option> 12</option>
+                  </select>
+                <br>
+              </div>
+
+              <button class="add-button" onclick="itemAdder()" type="button">Add Item</button>
+              <button class="remove-button" onclick="itemRemover()" type="button">Remove Item</button>
+
+              <input type="checkbox" class="center" id="urgent" name="urgent" value="true">
+              <label for="urgent" class="checkbox-text_top" id="urgent-label"> Check this box if your order is urgent. (Pay extra)</label><br>
+
+              <input type="checkbox" class="center" id="price-check" name="price-check" value="true">
+              <label for="price-check" class="checkbox-text_bottom" id="price-label"> Check this box if you've checked the pricing guide. (Required)</label><br>
+
+                <br>
+                <a href="https://docs.google.com/spreadsheets/d/1tvakCdytLC0HhVugUBd6OT00cpLwDd2EVC9aQFhDRbQ/edit?usp=sharing" class="pricing-guide" target="_blank">Pricing Guide</a>
+
+                <button onclick="sendMessage()" type="button" class="cooldown">Submit Order</button>
+
+                <a href="https://www.roblox.com/groups/5358353/Official-Tesco#!/about" target="_blank"><img class="roblox-social" src="https://tr.rbxcdn.com/34a1c42bb0265048b32998a9ec040fc0/420/420/Decal/Png"></a>
+                <a href="https://discord.gg/eWadMbv" target="_blank"><img class="discord-social" src="https://cdn.freebiesupply.com/logos/large/2x/discord-logo-png-transparent.png"></a>
+                <a href="https://www.youtube.com/channel/UCdurj4xzVcKH5DSnd7358tQ" target="_blank"><img class="youtube-social" src="https://www.freepnglogos.com/uploads/youtube-logo-png-images-0.png"></a>
+                <a href="https://twitter.com/Tesco__Official" target="_blank"><img class="twitter-social" src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png"></a>
+            </form>
+        </div>
+      </div>
+    </body>
+    <script>
+        // Start of pushing unedited items, types, and amounts to arrays.
+        var validItems = [];
+        var itemsArray = document.getElementById("item-picked");
+        for (var i = 1; i < itemsArray.length; i++) {
+            validItems.push(itemsArray[i].text);
+        }
+
+        var validTypes = [];
+        var typesArray = document.getElementById("type-picked");
+        for (var i = 1; i < typesArray.length; i++) {
+            validTypes.push(typesArray[i].text);
+        }
+        
+        var validAmounts = [];
+        var amountsArray = document.getElementById("amount-picked");
+        for (var i = 1; i < amountsArray.length; i++) {
+            validAmounts.push(parseInt(amountsArray[i].text));
+        }
+        // End of pushing unedited items, types, and ammounts to arrays.
+        
+        // Start of sendMessage function
+        function sendMessage() {
+          var forceClosed = false;
+          if (forceClosed) {
+            return alert("Orders are currently closed, please try again later!")
+          }
+
+          var elements = document.getElementsByClassName("item-option");
+          var items = '';
+          for (var i=0; i<=elements.length-1; i++) {
+            var current = elements[i].value;
+            if (validItems.includes(current)){
+              items += elements[i].value + (i != elements.length-1 ? ", " : "");
+            } else {
+              return alert("Invalid item selected! Check your order again.")
+            }
+          }
+
+          var elements = document.getElementsByClassName("type-option");
+          var types = '';
+          for (var i=0; i<=elements.length-1; i++) {
+            var current = elements[i].value;
+            if (validTypes.includes(current)) {
+              types += elements[i].value + (i != elements.length-1 ? ", " : "");
+            } else {
+              return alert("Invalid type selected! Check your order again.")
+            }
+          }
+
+          var elements = document.getElementsByClassName("amount-option");
+          var amounts = '';
+          for (var i=0; i<=elements.length-1; i++) {
+              var current = parseInt(elements[i].value);
+              if (validAmounts.includes(current)){
+                  amounts += elements[i].value + (i != elements.length-1 ? ", " : "");
+              } else {
+                  alert(validItems, current, validItems.includes(current))
+                  return alert("Invalid amount selected! Check your order again.")
+              }
+          }
+
+          if (document.getElementById("rblx-user").value == "") {
+            return alert("Please fill out the 'Roblox Name' textbox!")
+          }
+          if (document.getElementById("disc-user").value == "") {
+            return alert("Please fill out the 'Discord Name' textbox!")
+          }
+          if (document.getElementById("item-picked").value == "no-item") {
+            return alert("Please select an item with the 'Item' dropdown!")
+          }
+          if (document.getElementById("type-picked").value == "no-type") {
+            return alert("Please select a type with the 'Type' dropdown!")
+          }
+          if (document.getElementById("amount-picked").value == "no-amount") {
+            return alert("Please select an amount with the 'Quantity' dropdown!")
+          }
+
+          if (!document.getElementById("price-check").checked) {
+            return alert("Please check the pricing guide and check the box!")
+          }
+
+/*
+          var elements = document.getElementsByClassName("item-option");
+          var price = 0
+          for(var i=0; i<elements.length; i++) {
+            price += parseInt(elements[i].value);
+          }
+          var total_price = price + 1000 // (Shipping)
+          return alert(total_price)
+           */
+
+          var request = new XMLHttpRequest();
+          request.open("POST", "https://discordapp.com/api/webhooks/763819431062143005/OehJG6X9O4Q2f7F-N9SREkSeNFzOeCZhba3kSPlOgqbHr3RRXrEl1jjhHAQFr7NrawxU");
+          request.setRequestHeader('Content-type', 'application/json');
+          
+          var urgent = document.getElementById("urgent").checked ? "\n\n**URGENT ORDER!!**" : "";
+          var params = {
+          username: "Tesco Orders",
+          avatar_url: "https://cdn.discordapp.com/attachments/739309192523022397/763665745673715732/HalloweenPhotoshoppedTesco.png",
+          content: "▬▬▬▬▬▬▬▬▬▬\n`Roblox User:` " + document.getElementById("rblx-user").value + "\n`Discord User:` "+ document.getElementById("disc-user").value + "\n`Items:` "+ items + "\n`Item Type:` "+ types + "\n`Item Quantity:` " + amounts + urgent
+          }
+          
+          resetForm();
+          request.send(JSON.stringify(params));
+          window.alert("Order succesfully submitted! You will receive a ping on the Discord server when your order is ready, we'll try our best to be quick. <3");
+        }
+        // End of sendMessage function
+
+
+        // Start of resetForm function
+        function resetForm() {
+          document.getElementById("order-form").reset();
+        }
+        // End of resetForm function
+
+
+        // Start of itemAdder function
+        function itemAdder() {
+          if (document.getElementById("selectContainer").childElementCount > 75) {
+            return alert("You've reached the maximum amount of items...")
+          }
+          var selectionCounter = 0
+          var select = document.getElementById("item-picked")
+          var clone = select.cloneNode(true)
+          var name = select.getAttribute("name") + selectionCounter++
+          clone.id = name
+          clone.style.marginRight = "5px"
+          clone.setAttribute("name", name)
+          document.getElementById("selectContainer").appendChild(clone)
+
+          var selectionCounter = 0
+          var select = document.getElementById("type-picked")
+          var clone = select.cloneNode(true)
+          var name = select.getAttribute("name") + selectionCounter++
+          clone.id = name
+          clone.style.marginRight = "5px"
+          clone.setAttribute("name", name)
+          document.getElementById("selectContainer").appendChild(clone)
+
+          var selectionCounter = 0
+          var select = document.getElementById("amount-picked")
+          var clone = select.cloneNode(true)
+          var name = select.getAttribute("name") + selectionCounter++
+          clone.id = name
+          clone.style.marginRight = "100px"
+          clone.setAttribute("name", name)
+          document.getElementById("selectContainer").appendChild(clone)
+        }
+        // End of itemAdder function
+
+
+        // Start of itemRemover function
+        function itemRemover() {
+          if (document.getElementById("selectContainer").childElementCount < 6) {
+            return alert("You've reached the minimum amount of items...")
+          }
+          var selectionCounter = 0
+          var select = document.getElementById("item-picked")
+          var clone = select.cloneNode(true)
+          var name = select.getAttribute("name") + selectionCounter++
+          clone.id = name
+          clone.setAttribute("name", name)
+          document.getElementById("selectContainer").lastChild.remove();
+
+          var selectionCounter = 0
+          var select = document.getElementById("type-picked")
+          var clone = select.cloneNode(true)
+          var name = select.getAttribute("name") + selectionCounter++
+          clone.id = name
+          clone.setAttribute("name", name)
+          document.getElementById("selectContainer").lastChild.remove();
+
+          var selectionCounter = 0
+          var select = document.getElementById("amount-picked")
+          var clone = select.cloneNode(true)
+          var name = select.getAttribute("name") + selectionCounter++
+          clone.id = name
+          clone.setAttribute("name", name)
+          document.getElementById("selectContainer").lastChild.remove();
+        }
+        // End of itemRemover function
+      </script>
+</html>
+
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/5f7730bdf0e7167d0015a555/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+</script>
+<!--End of Tawk.to Script-->
+
+
+<!--Start of Falling Snowflakes-->
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+    ⛄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    🎅🏼
+  </div>
+  <div class="snowflake">
+    ⛄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+</div>
+<!--End of Falling Snowflakes-->
+
+
+</body>
+</html>

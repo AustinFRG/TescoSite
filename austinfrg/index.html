@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <link rel="icon" href="../images/favicon.png">
+      <link rel="canonical" href="https://tescolt2.com/">
+      <title>AustinFRG Ordering Site</title>
+      <meta name='description' content="The official AustinFRG LT2 ordering page.">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="style.css">
+      <script async src="https://arc.io/widget.min.js#31cZHmAN"></script>
+    </head>
+    <body>
+      <div class="regform"><h1> AustinFRG Order Form</h1></div>
+        <div class="main">
+            <form id="order-form">
+                <div id="name">
+                    <h2 class="name">Name</h2>
+                    <input class="rblxname" type="text" name="first_name" id="rblx-user"><br>
+                    <label class="rblxlabel">Roblox Name (Ex. AustinFRG)</label>
+                    <input class="discname" type="text" name="last_name" id="disc-user">
+                    <label class="disclabel">Discord Tag (Ex. AustinFRG#0001)</label>
+                </div>
+
+                <div id="selectContainer">
+                <h2 class="name"> Item(s)</h2>
+                <select class="item-option" name="category" id="item-picked">
+                  <option disabled="disabled" selected="selected" value="no-item">-- Item --</option>
+                  <!--  class="new-item" -->
+                  <option value="220" class="new-item"> [NEW!] Fabulous Gift</option>
+                  <option value="128" class="new-item"> [NEW!] Gift with Green Candy Cane Stripes (Gifted)</option>
+                  <option value="32089" class="new-item"> [NEW!] Spooky Deep Earth Gift (Gifted)</option>
+                  <option value="7020" class="new-item"> [NEW!] Teal Gift (Gifted)</option>
+                  <option value="6000"> Alpha Axe (Boxed)</option>
+                  <option value="4000"> Alpha Axe (Unboxed)</option>
+                  <option value="18000"> Arctic Painting (Boxed)</option>
+                  <option value="5750"> Beta Axe (Boxed)</option>
+                  <option value="3750"> Beta Axe (Unboxed)</option>
+                  <option value="4500"> Blue Ball (Boxed)</option>
+                  <option value="3000"> Blue Ball (Unboxed)</option>
+                  <option value="2000"> Bowl (Boxed)</option>
+                  <option value="3000"> Bowl (Gifted)</option>
+                  <option value="1000"> Bowl (Unboxed)</option>
+                  <option value="1000"> Candy (Unboxed)</option>
+                  <option value="4000"> Candy Bag (Boxed)</option>
+                  <option value="2500"> Candy Bag (Unboxed)</option>
+                  <option value="10000"> Candy Corn Axe (Boxed)</option>
+                  <option value="5000"> Candy Corn Axe (Unboxed)</option>
+                  <option value="4000"> Candycane (Boxed)</option>
+                  <option value="2500"> Candycane (Unboxed)</option>
+                  <option value="8500"> End Times Axe (Boxed)</option>
+                  <option value="6000"> End Times Axe (Unboxed)</option>
+                  <option value="12000"> Eye (Boxed)</option>
+                  <option value="5500"> Eye (Unboxed)</option>
+                  <option value="7000"> Fire Axe (Boxed)</option>
+                  <option value="13500"> Fire Axe (Gifted)</option>
+                  <option value="6000"> Fire Axe (Unboxed)</option>
+                  <option value="25000"> Fire Painting (Boxed)</option>
+                  <option value="45000"> Fire Painting (Gifted)</option>
+                  <option value="10000"> Gingerbread Axe (Boxed)</option>
+                  <option value="24000"> Gingerbread Axe (Gifted)</option>
+                  <option value="9000"> Gingerbread Axe (Unboxed)</option>
+                  <option value="9000"> Golden Toilet (Boxed)</option>
+                  <option value="14000"> Golden Toilet (Gifted)</option>
+                  <option value="2750"> Gray Pumpkin (Boxed)</option>
+                  <option value="1250"> Gray Pumpkin (Unboxed)</option>
+                  <option value="5000"> Green Ball (Boxed)</option>
+                  <option value="3500"> Green Ball (Unboxed)</option>
+                  <option value="4500"> Green Bone Turkey (Boxed)</option>
+                  <option value="2250"> Green Bone Turkey (Unboxed)</option>
+                  <option value="14000"> Green Pumpkin (Boxed)</option>
+                  <option value="9000"> Green Pumpkin (Unboxed)</option>
+                  <option value="10000"> Orange Pumpkin (Boxed)</option>
+                  <option value="5000"> Orange Pumpkin (Unboxed)</option>
+                  <option value="250000"> Pineapple Painting (Boxed)</option>
+                  <option value="200000"> Pink Candy (Unboxed)</option>
+                  <option value="14000"> Plate (Boxed)</option>
+                  <option value="27500"> Plate (Gifted)</option>
+                  <option value="10000"> Plate (Unboxed)</option>
+                  <option value="5800"> Purple Candy Bag (Boxed)</option>
+                  <option value="1900"> Purple Candy Bag (Unboxed)</option>
+                  <option value="14000"> Purple Pumpkin (Boxed)</option>
+                  <option value="9500"> Purple Pumpkin (Unboxed)</option>
+                  <option value="5900"> Purple Wobble Bobble (Boxed)</option>
+                  <option value="4000"> Purple Wobble Bobble (Unboxed)</option>
+                  <option value="3900"> Red Ball (Boxed)</option>
+                  <option value="3000"> Red Ball (Unboxed)</option>
+                  <option value="14000"> Red Pumpkin (Boxed)</option>
+                  <option value="9800"> Red Pumpkin (Unboxed)</option>
+                  <option value="12000"> Scoob Head (Unboxed)</option>
+                  <option value="5800"> Teal Wobble Bobble (Boxed)</option>
+                  <option value="4700"> Teal Wobble Bobble (Unboxed)</option>
+                  <option value="9000"> The Many Axe (Boxed)</option>
+                  <option value="4800"> The Many Axe (Unboxed)</option>
+                  <option value="100"> Turkey Leftovers (Boxed)</option>
+                  <option value="80"> Turkey Leftovers (Unboxed)</option>
+                  <option value="2300"> Wooden Pumpkin (Boxed)</option>
+                  <option value="1100"> Wooden Pumpkin (Unboxed)</option>
+                  <option value="10000"> Yellow Ball (Boxed)</option>
+                  <option value="5000"> Yellow Ball (Gifted)</option>
+                  <option value="3000"> Yellow Ball (Unboxed)</option>
+                  <option value="10000"> Yellow Wobble Bobble (Boxed)</option>
+                  <option value="5000"> Yellow Wobble Bobble (Unboxed)</option>
+                  </select>
+
+                <select class="amount-option" name="category" id="amount-picked">
+                  <option disabled="disabled" selected="selected" value="no-amount">-- Amount --</option>
+                      <option> 1</option>
+                      <option> 2</option>
+                      <option> 3</option>
+                      <option> 4</option>
+                      <option> 5</option>
+                      <option> 6</option>
+                      <option> 7</option>
+                      <option> 8</option>
+                      <option> 9</option>
+                      <option> 10</option>
+                      <option> 11</option>
+                      <option> 12</option>
+                      <option> 13</option>
+                      <option> 14</option>
+                      <option> 15</option>
+                  </select>
+                <br>
+              </div>
+
+              <button class="add-button" onclick="itemAdder()" type="button">Add Item</button>
+              <button class="remove-button" onclick="itemRemover()" type="button">Remove Item</button>
+
+              <input type="checkbox" class="center" id="urgent" name="urgent" value="true">
+              <label for="urgent" class="checkbox-text" id="urgent-label"> Check this box if your order is urgent. (Pay $25,000 extra)</label><br>
+                <br>
+
+                <button onclick="sendMessage()" type="button" class="cooldown">Submit Order</button>
+            </form>
+        </div>
+      </div>
+    </body>
+    <script>
+        // Start of sendMessage function
+        var allItems = [];
+
+        function numberWithCommas(x) {
+          return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function sendMessage() {
+          var ordersClosed = true;
+
+          if (ordersClosed) {
+            return alert("Orders are currently closed, please try again later!" + `\n\nThis ordering form is currently closed due to personal reasons! Save the info you've filled out, and try again later (You will have to refresh the page).`)
+          } else {
+            
+          var elements = document.getElementsByClassName("item-option");
+          var items = '';
+          for (var i=0; i<=elements.length-1; i++) {
+            items += document.getElementById('item-picked').options[elements[i].selectedIndex].text + (i != elements.length-1 ? ", " : "");
+          }
+
+          var elements = document.getElementsByClassName("amount-option");
+          var amounts = '';
+          for (var i=0; i<=elements.length-1; i++) {
+            amounts += elements[i].value + (i != elements.length-1 ? ", " : "");
+          }
+
+          if (document.getElementById("rblx-user").value == "") {
+            return alert("Please fill out the 'Roblox Name' textbox!")
+          }
+          if (document.getElementById("disc-user").value == "") {
+            return alert("Please fill out the 'Discord Name' textbox!")
+          }
+          if (document.getElementById("item-picked").value == "no-item") {
+            return alert("Please select an item with the 'Item' dropdown!")
+          }
+          if (document.getElementById("amount-picked").value == "no-amount") {
+            return alert("Please select an amount with the 'Quantity' dropdown!")
+          }
+
+          var elements = document.getElementsByClassName("item-option");
+          var price = 0
+          for(var i=0; i<elements.length; i++) {
+            price += parseInt(elements[i].value) * parseInt(document.getElementsByClassName("amount-option")[i].value);
+          }
+          var total_price = price + 1000 // (Shipping)
+
+          var request = new XMLHttpRequest();
+          request.open("POST", "https://discord.com/api/webhooks/786023370537041962/axPovgvV1_pwL-11YvLXYT4fJXH8gEWrw52yzQjA-EFtOjx6z-wUdguj2Lgfjgj5VXxW");
+          request.setRequestHeader('Content-type', 'application/json');
+
+          if (document.getElementById("urgent").checked) {
+            var urgentTotal_price = total_price += 25000 // (Urgent Fee)
+            var params = {
+            username: "Tesco Orders | AustinFRG's Shop",
+            avatar_url: "https://cdn.discordapp.com/attachments/739309192523022397/786023703288741888/profpfp-snow_background.gif",
+            content: "▬▬▬▬▬▬▬▬▬▬\n<@298226178576220170>\n`Roblox User:` " + document.getElementById("rblx-user").value + "\n`Discord User:` "+ document.getElementById("disc-user").value + "\n`Items:` "+ items + "\n`Item Quantity:` " + amounts + "\n`Price:` $" + numberWithCommas(urgentTotal_price) + "\n\n**URGENT ORDER!!**"
+          }
+          }
+          else {
+            var params = {
+            username: "Tesco Orders | AustinFRG's Shop",
+            avatar_url: "https://cdn.discordapp.com/attachments/739309192523022397/786023703288741888/profpfp-snow_background.gif",
+            content: "▬▬▬▬▬▬▬▬▬▬\n<@298226178576220170>\n`Roblox User:` " + document.getElementById("rblx-user").value + "\n`Discord User:` "+ document.getElementById("disc-user").value + "\n`Items:` "+ items + "\n`Item Quantity:` " + amounts + "\n`Price:` $" + numberWithCommas(total_price)
+          }
+          }
+          
+          resetForm();
+          request.send(JSON.stringify(params));
+
+          if (!document.getElementById("urgent").checked) {
+            window.alert(`Order succesfully submitted! You will receive a ping on the Discord server when your order is ready, we'll try our best to be quick. <3\n\nTotal Price: $${numberWithCommas(total_price)}`);
+          } else {
+            window.alert(`Order succesfully submitted! You will receive a ping on the Discord server when your order is ready, we'll try our best to be quick. <3\n\nTotal Price: $${numberWithCommas(urgentTotal_price)}`);
+          }
+          }
+        }
+        // End of sendMessage function
+
+        // Start of resetForm function
+        function resetForm() {
+          document.getElementById("order-form").reset();
+        }
+        // End of resetForm function
+
+        // Start of itemAdder function
+        function itemAdder() {
+          var maximumEnabled = false;
+          if (document.getElementById("selectContainer").childElementCount > 75 && maximumEnabled) {
+            return alert("You've reached the maximum amount of items...")
+          }
+          var selectionCounter = 0
+          var select = document.getElementById("item-picked")
+          var clone = select.cloneNode(true)
+          var name = select.getAttribute("name") + selectionCounter++
+          clone.id = name
+          clone.style.marginRight = "5px"
+          clone.setAttribute("name", name)
+          document.getElementById("selectContainer").appendChild(clone)
+
+          var selectionCounter = 0
+          var select = document.getElementById("amount-picked")
+          var clone = select.cloneNode(true)
+          var name = select.getAttribute("name") + selectionCounter++
+          clone.id = name
+          clone.style.marginRight = "100px"
+          clone.setAttribute("name", name)
+          document.getElementById("selectContainer").appendChild(clone)
+        }
+        // End of itemAdder function
+
+        // Start of itemRemover function
+        function itemRemover() {
+          if (document.getElementById("selectContainer").childElementCount < 6) {
+            return alert("You've reached the minimum amount of items...")
+          }
+          var selectionCounter = 0
+          var select = document.getElementById("item-picked")
+          var clone = select.cloneNode(true)
+          var name = select.getAttribute("name") + selectionCounter++
+          clone.id = name
+          clone.setAttribute("name", name)
+          document.getElementById("selectContainer").lastChild.remove();
+
+          var selectionCounter = 0
+          var select = document.getElementById("amount-picked")
+          var clone = select.cloneNode(true)
+          var name = select.getAttribute("name") + selectionCounter++
+          clone.id = name
+          clone.setAttribute("name", name)
+          document.getElementById("selectContainer").lastChild.remove();
+        }
+        // End of itemRemover function
+      </script>
+</html>
+
+<!--Start of Falling Snowflakes-->
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+    ⛄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    🎅🏼
+  </div>
+  <div class="snowflake">
+    ⛄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+  <div class="snowflake">
+    ❄
+  </div>
+</div>
+<!--End of Falling Snowflakes-->
+
+</body>
+</html>
