@@ -273,17 +273,17 @@
         // total_price = discount*total_price // (Discount)
         alert(total_price);
 
+        var webhook = config.DISCORD_WEBHOOK;
         var request = new XMLHttpRequest();
-        request.open("POST", "https://discordapp.com/api/webhooks/763819431062143005/OehJG6X9O4Q2f7F-N9SREkSeNFzOeCZhba3kSPlOgqbHr3RRXrEl1jjhHAQFr7NrawxU");
+        request.open("POST", webhook);
         request.setRequestHeader('Content-type', 'application/json');
           
         var urgent = document.getElementById("urgent").checked ? "\n\n**URGENT ORDER!!**" : "";
 
-        var webhook = config.DISCORD_WEBHOOK;
         if (discount != "1") {
           var params = {
             username: "Tesco Orders",
-            avatar_url: webhook,
+            avatar_url: "https://cdn.discordapp.com/attachments/739309192523022397/763665745673715732/HalloweenPhotoshoppedTesco.png",
             content: `▬▬▬▬▬▬▬▬▬▬\n\`Roblox User:\` ${document.getElementById("rblx-user").value} \n\`Discord User:\` ${document.getElementById("disc-user").value} \n\`Items:\` ${items} \n\`Item Type:\` ${types} \n\`Item Quantity:\` ${amounts} \n\`Total Price:\` ${total_price} ${urgent}`
             // content: "▬▬▬▬▬▬▬▬▬▬\n`Roblox User:` " + document.getElementById("rblx-user").value + "\n`Discord User:` "+ document.getElementById("disc-user").value + "\n`Items:` "+ items + "\n`Item Type:` "+ types + "\n`Item Quantity:` " + amounts + "\n`Total Price:` " + total_price + urgent
           }
