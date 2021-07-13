@@ -192,7 +192,7 @@
         var validItems = [];
         var itemsArray = document.getElementById("item-picked");
         for (var i = 1; i < itemsArray.length; i++) {
-            validItems.push(itemsArray[i].text);
+          validItems.push(itemsArray[i].text);
         }
 
         var validTypes = [];
@@ -219,8 +219,10 @@
           var items = '';
           for (var i=0; i<=elements.length-1; i++) {
             var current = elements[i].value;
-            if (validItems.includes(current)){
-              items += elements[i].value + (i != elements.length-1 ? ", " : "");
+            if (validItems.includes(current)) {
+              if (current != "-- Item --" && current != "") {
+                items += elements[i].value + (i != elements.length-1 ? ", " : "");
+              }
             } else {
               return alert("Invalid item selected! Check your order again.")
             }
@@ -241,10 +243,9 @@
           var amounts = '';
           for (var i=0; i<=elements.length-1; i++) {
               var current = parseInt(elements[i].value);
-              if (validAmounts.includes(current)){
+              if (validAmounts.includes(current)) {
                   amounts += elements[i].value + (i != elements.length-1 ? ", " : "");
               } else {
-                  alert(validItems, current, validItems.includes(current))
                   return alert("Invalid amount selected! Check your order again.")
               }
           }
