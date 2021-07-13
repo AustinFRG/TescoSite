@@ -219,10 +219,8 @@
           var items = '';
           for (var i=0; i<=elements.length-1; i++) {
             var current = elements[i].value;
-            if (validItems.includes(current) || current == "-- Item --") {
-              if (current != "-- Item --" && current != "") {
-                items += elements[i].value + (i != elements.length-1 ? ", " : "");
-              }
+            if (validItems.includes(current)) {
+              items += elements[i].value + (i != elements.length-1 ? ", " : "");
             } else {
               return alert("Invalid item selected! Check your order again.")
             }
