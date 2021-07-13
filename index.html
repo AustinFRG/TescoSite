@@ -182,197 +182,199 @@
       </div>
     </body>
     <script>
-        // Start of pushing unedited items, types, and amounts to arrays.
-        var validItems = [];
-        var itemsArray = document.getElementById("item-picked");
-        for (var i = 1; i < itemsArray.length; i++) {
-          validItems.push(itemsArray[i].text);
-        }
+      // Start of pushing unedited items, types, and amounts to arrays.
+      var validItems = [];
+      var itemsArray = document.getElementById("item-picked");
+      for (var i = 1; i < itemsArray.length; i++) {
+        validItems.push(itemsArray[i].text);
+      }
 
-        var validTypes = [];
-        var typesArray = document.getElementById("type-picked");
-        for (var i = 1; i < typesArray.length; i++) {
-            validTypes.push(typesArray[i].text);
-        }
+      var validTypes = [];
+      var typesArray = document.getElementById("type-picked");
+      for (var i = 1; i < typesArray.length; i++) {
+          validTypes.push(typesArray[i].text);
+      }
+      
+      var validAmounts = [];
+      var amountsArray = document.getElementById("amount-picked");
+      for (var i = 1; i < amountsArray.length; i++) {
+          validAmounts.push(parseInt(amountsArray[i].text));
+      }
+      // End of pushing unedited items, types, and ammounts to arrays.
         
-        var validAmounts = [];
-        var amountsArray = document.getElementById("amount-picked");
-        for (var i = 1; i < amountsArray.length; i++) {
-            validAmounts.push(parseInt(amountsArray[i].text));
+      // Start of sendMessage function
+      function sendMessage() {
+        var forceClosed = false;
+        var discount = .75; // (25% Off // Set to 1 for no discount)
+        if (forceClosed) {
+          return alert("Orders are currently closed, please try again later!")
         }
-        // End of pushing unedited items, types, and ammounts to arrays.
-        
-        // Start of sendMessage function
-        function sendMessage() {
-          var forceClosed = false;
-          var discount = .75; // (25% Off // Set to 1 for no discount)
-          if (forceClosed) {
-            return alert("Orders are currently closed, please try again later!")
-          }
 
-          var elements = document.getElementsByClassName("item-option");
-          var items = '';
-          for (var i=0; i<=elements.length-1; i++) {
-            var current = elements[i].value;
-            if (validItems.includes(current)) {
-              items += elements[i].value + (i != elements.length-1 ? ", " : "");
-            } else {
-              return alert("Invalid item selected! Check your order again.")
-            }
-          }
-
-          var elements = document.getElementsByClassName("type-option");
-          var types = '';
-          for (var i=0; i<=elements.length-1; i++) {
-            var current = elements[i].value;
-            if (validTypes.includes(current)) {
-              types += elements[i].value + (i != elements.length-1 ? ", " : "");
-            } else {
-              return alert("Invalid type selected! Check your order again.")
-            }
-          }
-
-          var elements = document.getElementsByClassName("amount-option");
-          var amounts = '';
-          for (var i=0; i<=elements.length-1; i++) {
-              var current = parseInt(elements[i].value);
-              if (validAmounts.includes(current)) {
-                  amounts += elements[i].value + (i != elements.length-1 ? ", " : "");
-              } else {
-                  return alert("Invalid amount selected! Check your order again.")
-              }
-          }
-
-          if (document.getElementById("rblx-user").value == "") {
-            return alert("Please fill out the 'Roblox Name' textbox!")
-          }
-          if (document.getElementById("disc-user").value == "") {
-            return alert("Please fill out the 'Discord Name' textbox!")
-          }
-          if (document.getElementById("item-picked").value == "no-item") {
-            return alert("Please select an item with the 'Item' dropdown!")
-          }
-          if (document.getElementById("type-picked").value == "no-type") {
-            return alert("Please select a type with the 'Type' dropdown!")
-          }
-          if (document.getElementById("amount-picked").value == "no-amount") {
-            return alert("Please select an amount with the 'Quantity' dropdown!")
-          }
-          if (!document.getElementById("price-check").checked) {
-            return alert("Please check the pricing guide and check the box!")
-          }
-
-
-          var elements = document.getElementsByClassName("item-option");
-          var price = 0
-          for(var i=0; i<elements.length; i++) {
-            price += parseInt(elements[i].value);
-          }
-          var total_price = price + 1000 // (Shipping)
-          total_price = discount*total_price // (Discount)
-          alert(total_price);
-
-          var request = new XMLHttpRequest();
-          request.open("POST", "https://discordapp.com/api/webhooks/763819431062143005/OehJG6X9O4Q2f7F-N9SREkSeNFzOeCZhba3kSPlOgqbHr3RRXrEl1jjhHAQFr7NrawxU");
-          request.setRequestHeader('Content-type', 'application/json');
-          
-          var urgent = document.getElementById("urgent").checked ? "\n\n**URGENT ORDER!!**" : "";
-
-          if (discount != "1") {
-            var params = {
-              username: "Tesco Orders",
-              avatar_url: "https://cdn.discordapp.com/attachments/739309192523022397/763665745673715732/HalloweenPhotoshoppedTesco.png",
-              content: `▬▬▬▬▬▬▬▬▬▬\n\`Roblox User:\` ${document.getElementById("rblx-user").value} \n\`Discord User:\` ${document.getElementById("disc-user").value} \n\`Items:\` ${items} \n\`Item Type:\` ${types} \n\`Item Quantity:\` ${amounts} \n\`Total Price:\` ${total_price} ${urgent}`
-              // content: "▬▬▬▬▬▬▬▬▬▬\n`Roblox User:` " + document.getElementById("rblx-user").value + "\n`Discord User:` "+ document.getElementById("disc-user").value + "\n`Items:` "+ items + "\n`Item Type:` "+ types + "\n`Item Quantity:` " + amounts + "\n`Total Price:` " + total_price + urgent
-            }
+        var elements = document.getElementsByClassName("item-option");
+        var items = '';
+        for (var i=0; i<=elements.length-1; i++) {
+          var current = elements[i].value;
+          if (validItems.includes(current)) {
+            items += elements[i].value + (i != elements.length-1 ? ", " : "");
           } else {
-            var params = {
-              username: "Tesco Orders",
-              avatar_url: "https://cdn.discordapp.com/attachments/739309192523022397/763665745673715732/HalloweenPhotoshoppedTesco.png",
-              content: `▬▬▬▬▬▬▬▬▬▬\n\`Roblox User:\` ${document.getElementById("rblx-user").value} \n\`Discord User:\` ${document.getElementById("disc-user").value} \n\`Items:\` ${items} \n\`Item Type:\` ${types} \n\`Item Quantity:\` ${amounts} \n\`Total Price (${discount.splice(1, 1)}% Discount):\` ${total_price} ${urgent}`
+            return alert("Invalid item selected! Check your order again.")
+          }
+        }
+
+        var elements = document.getElementsByClassName("type-option");
+        var types = '';
+        for (var i=0; i<=elements.length-1; i++) {
+          var current = elements[i].value;
+          if (validTypes.includes(current)) {
+            types += elements[i].value + (i != elements.length-1 ? ", " : "");
+          } else {
+            return alert("Invalid type selected! Check your order again.")
+          }
+        }
+
+        var elements = document.getElementsByClassName("amount-option");
+        var amounts = '';
+        for (var i=0; i<=elements.length-1; i++) {
+            var current = parseInt(elements[i].value);
+            if (validAmounts.includes(current)) {
+                amounts += elements[i].value + (i != elements.length-1 ? ", " : "");
+            } else {
+                return alert("Invalid amount selected! Check your order again.")
             }
-          }
+        }
+
+        if (document.getElementById("rblx-user").value == "") {
+          return alert("Please fill out the 'Roblox Name' textbox!")
+        }
+        if (document.getElementById("disc-user").value == "") {
+          return alert("Please fill out the 'Discord Name' textbox!")
+        }
+        if (document.getElementById("item-picked").value == "no-item") {
+          return alert("Please select an item with the 'Item' dropdown!")
+        }
+        if (document.getElementById("type-picked").value == "no-type") {
+          return alert("Please select a type with the 'Type' dropdown!")
+        }
+        if (document.getElementById("amount-picked").value == "no-amount") {
+          return alert("Please select an amount with the 'Quantity' dropdown!")
+        }
+        if (!document.getElementById("price-check").checked) {
+          return alert("Please check the pricing guide and check the box!")
+        }
+
+
+        var elements = document.getElementsByClassName("item-option");
+        var price = 0
+        for(var i=0; i<elements.length; i++) {
+          price += parseInt(elements[i].value);
+        }
+        var total_price = price + 1000 // (Shipping)
+        total_price = discount*total_price // (Discount)
+        alert(total_price);
+
+        var request = new XMLHttpRequest();
+        request.open("POST", "https://discordapp.com/api/webhooks/763819431062143005/OehJG6X9O4Q2f7F-N9SREkSeNFzOeCZhba3kSPlOgqbHr3RRXrEl1jjhHAQFr7NrawxU");
+        request.setRequestHeader('Content-type', 'application/json');
           
-          resetForm();
-          request.send(JSON.stringify(params));
-          window.alert("Order succesfully submitted! You will receive a ping on the Discord server when your order is ready, we'll try our best to be quick. <3");
-        }
-        // End of sendMessage function
+        var urgent = document.getElementById("urgent").checked ? "\n\n**URGENT ORDER!!**" : "";
 
-
-        // Start of resetForm function
-        function resetForm() {
-          document.getElementById("order-form").reset();
-        }
-        // End of resetForm function
-
-
-        // Start of itemAdder function
-        function itemAdder() {
-          if (document.getElementById("selectContainer").childElementCount > 75) {
-            return alert("You've reached the maximum amount of items...")
+        var webhook = config.DISCORD_WEBHOOK;
+        if (discount != "1") {
+          var params = {
+            username: "Tesco Orders",
+            avatar_url: webhook,
+            content: `▬▬▬▬▬▬▬▬▬▬\n\`Roblox User:\` ${document.getElementById("rblx-user").value} \n\`Discord User:\` ${document.getElementById("disc-user").value} \n\`Items:\` ${items} \n\`Item Type:\` ${types} \n\`Item Quantity:\` ${amounts} \n\`Total Price:\` ${total_price} ${urgent}`
+            // content: "▬▬▬▬▬▬▬▬▬▬\n`Roblox User:` " + document.getElementById("rblx-user").value + "\n`Discord User:` "+ document.getElementById("disc-user").value + "\n`Items:` "+ items + "\n`Item Type:` "+ types + "\n`Item Quantity:` " + amounts + "\n`Total Price:` " + total_price + urgent
           }
-          var selectionCounter = 0
-          var select = document.getElementById("item-picked")
-          var clone = select.cloneNode(true)
-          var name = select.getAttribute("name") + selectionCounter++
-          clone.id = name
-          clone.style.marginRight = "5px"
-          clone.setAttribute("name", name)
-          document.getElementById("selectContainer").appendChild(clone)
-
-          var selectionCounter = 0
-          var select = document.getElementById("type-picked")
-          var clone = select.cloneNode(true)
-          var name = select.getAttribute("name") + selectionCounter++
-          clone.id = name
-          clone.style.marginRight = "5px"
-          clone.setAttribute("name", name)
-          document.getElementById("selectContainer").appendChild(clone)
-
-          var selectionCounter = 0
-          var select = document.getElementById("amount-picked")
-          var clone = select.cloneNode(true)
-          var name = select.getAttribute("name") + selectionCounter++
-          clone.id = name
-          clone.style.marginRight = "100px"
-          clone.setAttribute("name", name)
-          document.getElementById("selectContainer").appendChild(clone)
-        }
-        // End of itemAdder function
-
-
-        // Start of itemRemover function
-        function itemRemover() {
-          if (document.getElementById("selectContainer").childElementCount < 6) {
-            return alert("You've reached the minimum amount of items...")
+        } else {
+          var params = {
+            username: "Tesco Orders",
+            avatar_url: "https://cdn.discordapp.com/attachments/739309192523022397/763665745673715732/HalloweenPhotoshoppedTesco.png",
+            content: `▬▬▬▬▬▬▬▬▬▬\n\`Roblox User:\` ${document.getElementById("rblx-user").value} \n\`Discord User:\` ${document.getElementById("disc-user").value} \n\`Items:\` ${items} \n\`Item Type:\` ${types} \n\`Item Quantity:\` ${amounts} \n\`Total Price (${discount.splice(1, 1)}% Discount):\` ${total_price} ${urgent}`
           }
-          var selectionCounter = 0
-          var select = document.getElementById("item-picked")
-          var clone = select.cloneNode(true)
-          var name = select.getAttribute("name") + selectionCounter++
-          clone.id = name
-          clone.setAttribute("name", name)
-          document.getElementById("selectContainer").lastChild.remove();
-
-          var selectionCounter = 0
-          var select = document.getElementById("type-picked")
-          var clone = select.cloneNode(true)
-          var name = select.getAttribute("name") + selectionCounter++
-          clone.id = name
-          clone.setAttribute("name", name)
-          document.getElementById("selectContainer").lastChild.remove();
-
-          var selectionCounter = 0
-          var select = document.getElementById("amount-picked")
-          var clone = select.cloneNode(true)
-          var name = select.getAttribute("name") + selectionCounter++
-          clone.id = name
-          clone.setAttribute("name", name)
-          document.getElementById("selectContainer").lastChild.remove();
         }
-        // End of itemRemover function
-      </script>
+          
+        resetForm();
+        request.send(JSON.stringify(params));
+        window.alert("Order succesfully submitted! You will receive a ping on the Discord server when your order is ready, we'll try our best to be quick. <3");
+      }
+      // End of sendMessage function
+
+
+      // Start of resetForm function
+      function resetForm() {
+        document.getElementById("order-form").reset();
+      }
+      // End of resetForm function
+
+
+      // Start of itemAdder function
+      function itemAdder() {
+        if (document.getElementById("selectContainer").childElementCount > 75) {
+          return alert("You've reached the maximum amount of items...")
+        }
+        var selectionCounter = 0
+        var select = document.getElementById("item-picked")
+        var clone = select.cloneNode(true)
+        var name = select.getAttribute("name") + selectionCounter++
+        clone.id = name
+        clone.style.marginRight = "5px"
+        clone.setAttribute("name", name)
+        document.getElementById("selectContainer").appendChild(clone)
+
+        var selectionCounter = 0
+        var select = document.getElementById("type-picked")
+        var clone = select.cloneNode(true)
+        var name = select.getAttribute("name") + selectionCounter++
+        clone.id = name
+        clone.style.marginRight = "5px"
+        clone.setAttribute("name", name)
+        document.getElementById("selectContainer").appendChild(clone)
+
+        var selectionCounter = 0
+        var select = document.getElementById("amount-picked")
+        var clone = select.cloneNode(true)
+        var name = select.getAttribute("name") + selectionCounter++
+        clone.id = name
+        clone.style.marginRight = "100px"
+        clone.setAttribute("name", name)
+        document.getElementById("selectContainer").appendChild(clone)
+      }
+      // End of itemAdder function
+
+
+      // Start of itemRemover function
+      function itemRemover() {
+        if (document.getElementById("selectContainer").childElementCount < 6) {
+          return alert("You've reached the minimum amount of items...")
+        }
+        var selectionCounter = 0
+        var select = document.getElementById("item-picked")
+        var clone = select.cloneNode(true)
+        var name = select.getAttribute("name") + selectionCounter++
+        clone.id = name
+        clone.setAttribute("name", name)
+        document.getElementById("selectContainer").lastChild.remove();
+
+        var selectionCounter = 0
+        var select = document.getElementById("type-picked")
+        var clone = select.cloneNode(true)
+        var name = select.getAttribute("name") + selectionCounter++
+        clone.id = name
+        clone.setAttribute("name", name)
+        document.getElementById("selectContainer").lastChild.remove();
+
+        var selectionCounter = 0
+        var select = document.getElementById("amount-picked")
+        var clone = select.cloneNode(true)
+        var name = select.getAttribute("name") + selectionCounter++
+        clone.id = name
+        clone.setAttribute("name", name)
+        document.getElementById("selectContainer").lastChild.remove();
+      }
+      // End of itemRemover function
+    </script>
+    <script type='text/javascript' src='config.js'></script>
 </html>
 
 
