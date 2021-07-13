@@ -163,7 +163,7 @@
               <button class="remove-button" onclick="itemRemover()" type="button">Remove Item</button>
 
               <div id="name">
-                <h2 class="name">Name</h2>
+                <h2 class="name">Discount</h2>
                 <input class="couponname" type="text" name="coupon_code" id="coupon-code"><br>
                 <label class="couponlabel">Discount Code</label>
               </div>
@@ -210,7 +210,7 @@
         
         // Start of sendMessage function
         function sendMessage() {
-          var forceClosed = true;
+          var forceClosed = false;
           if (forceClosed) {
             return alert("Orders are currently closed, please try again later!")
           }
