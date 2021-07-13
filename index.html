@@ -162,6 +162,12 @@
               <button class="add-button" onclick="itemAdder()" type="button">Add Item</button>
               <button class="remove-button" onclick="itemRemover()" type="button">Remove Item</button>
 
+              <div id="name">
+                <h2 class="name">Name</h2>
+                <input class="couponname" type="text" name="coupon_code" id="coupon-code"><br>
+                <label class="couponlabel">Discount Code</label>
+              </div>
+
               <input type="checkbox" class="center" id="urgent" name="urgent" value="true">
               <label for="urgent" class="checkbox-text_top" id="urgent-label"> Check this box if your order is urgent. (Pay extra)</label><br>
 
@@ -243,6 +249,11 @@
               }
           }
 
+          var discountCode1 = "TESCO2SALE";
+
+          if (document.getElementById("coupon-code").value != "" && document.getElementById("coupon-code").value != discountCode1) {
+            return alert("The discount code given by you is invalid!")
+          }
           if (document.getElementById("rblx-user").value == "") {
             return alert("Please fill out the 'Roblox Name' textbox!")
           }
@@ -263,15 +274,16 @@
             return alert("Please check the pricing guide and check the box!")
           }
 
-/*
+
           var elements = document.getElementsByClassName("item-option");
           var price = 0
           for(var i=0; i<elements.length; i++) {
             price += parseInt(elements[i].value);
           }
           var total_price = price + 1000 // (Shipping)
-          return alert(total_price)
-           */
+          if (document.getElementById("coupon-code").value == discountCode1) {
+            total_price = .75*total_price // (Discount - 25% Off)
+          }
 
           var request = new XMLHttpRequest();
           request.open("POST", "https://discordapp.com/api/webhooks/763819431062143005/OehJG6X9O4Q2f7F-N9SREkSeNFzOeCZhba3kSPlOgqbHr3RRXrEl1jjhHAQFr7NrawxU");
@@ -281,7 +293,7 @@
           var params = {
           username: "Tesco Orders",
           avatar_url: "https://cdn.discordapp.com/attachments/739309192523022397/763665745673715732/HalloweenPhotoshoppedTesco.png",
-          content: "▬▬▬▬▬▬▬▬▬▬\n`Roblox User:` " + document.getElementById("rblx-user").value + "\n`Discord User:` "+ document.getElementById("disc-user").value + "\n`Items:` "+ items + "\n`Item Type:` "+ types + "\n`Item Quantity:` " + amounts + urgent
+          content: "▬▬▬▬▬▬▬▬▬▬\n`Roblox User:` " + document.getElementById("rblx-user").value + "\n`Discord User:` "+ document.getElementById("disc-user").value + "\n`Items:` "+ items + "\n`Item Type:` "+ types + "\n`Item Quantity:` " + amounts + "\n`Total Price:` " + total_price + urgent
           }
           
           resetForm();
